@@ -95,14 +95,16 @@ Together these act as a small regression suite demonstrating reproducible input 
 
 --
 
-## Included Test Suite (Regression Examples)
+## Included Test Suite (Deterministic Regression Runs)
 
-| ID | Example | Expected Behavior | Purpose |
-|----|---------|-----------------|-----------|
-| 001 | Enfish | Likely Eligible | Positive control (computer architecture improvement) |
-| 002 | Ultramercial | Likely Ineligible | Business-method negative control |
-| 003 | PageRank-style ranking | Likely Ineligible | Abstract data scoring |
-| 004 | McRO-style animation rules | Edge case | Demonstrates doctrine gaps / future improvement |
+| ID  | Category | Expected Result | Purpose |
+|-----|-----------|----------------|-----------|
+| 001 | Structural / architecture improvement | Likely Eligible | Positive control – verifies Enfish-style computer functionality improvements pass |
+| 002 | Statistical / financial analytics | Likely Ineligible | Math + generic computation should fail |
+| 003 | Data classification / identifier matching | Likely Ineligible | Information processing without technical improvement should fail |
+| 004 | Rule-based animation automation | Edge case (beta) | Complex software rules case used to expose doctrine gaps and guide future rule expansion |
+
+Reference cases include: Enfish (eligible), SAP/InvestPic (ineligible), Intellectual Ventures v. Symantec (ineligible), and McRO (edge/complex rules automation).
 
 ---
 
