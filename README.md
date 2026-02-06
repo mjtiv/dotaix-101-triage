@@ -86,10 +86,10 @@ input claim → DotAIX (.aix) rule file → structured eligibility memo.
 
 Claim_101_Analysis_V2.aix.txt – deterministic execution script
 
-001_*.pdf – positive control (eligible)
-002_*.pdf – ineligible example (statistical analysis)
-003_*.pdf – ineligible example (data classification)
-004_*.pdf – complex edge case (beta limitation)
+-001_*.pdf – positive control (eligible)
+-002_*.pdf – ineligible example (statistical analysis)
+-003_*.pdf – ineligible example (data classification)
+-004_*.pdf – complex edge case (beta limitation)
 
 Together these act as a small regression suite demonstrating reproducible input → output behavior.
 
