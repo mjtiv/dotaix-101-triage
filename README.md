@@ -1,5 +1,14 @@
 # DotAIX §101 Triage Engine
-Deterministic, reproducible patent eligibility analysis using a closed-record (.aix) execution model.
+
+A deterministic AI execution environment for patent law.
+
+Run §101 eligibility analyses using a fixed evidentiary record and reproducible outputs instead of free-form prompting.
+
+No installation required — drag and drop the `.aix` file directly into ChatGPT.  
+The execution model is portable and model-agnostic.
+
+This repo prioritizes correctness, auditability, and repeatability over doctrinal coverage.  
+Additional cases and rules can be added incrementally without changing the core execution framework.
 
 ---
 
@@ -70,12 +79,19 @@ This tool provides **initial triage only**.
 
 ## Repository Structure
 
-Claim_101_Analysis_V2.aix.txt # closed-record rule set
+This repo is intentionally minimal.
 
-001_Enfish_PASS.txt  (Postive Control)
-002_Ultramercial_FAIL.txt
-003_PageRank_FAIL.txt
-004_McRO_EDGE.txt (Edge cases cause hiccups at this stage)
+Each PDF is a full execution transcript showing:
+input claim → DotAIX (.aix) rule file → structured eligibility memo.
+
+Claim_101_Analysis_V2.aix.txt – deterministic execution script
+
+001_*.pdf – positive control (eligible)
+002_*.pdf – ineligible example (statistical analysis)
+003_*.pdf – ineligible example (data classification)
+004_*.pdf – complex edge case (beta limitation)
+
+Together these act as a small regression suite demonstrating reproducible input → output behavior.
 
 --
 
