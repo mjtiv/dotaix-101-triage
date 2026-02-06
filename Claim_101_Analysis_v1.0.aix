@@ -1,0 +1,260 @@
+# === DotAIX EXECUTION INSTRUCTION ===
+# MODE: Patent-Eligibility Analysis (35 U.S.C. §101)
+# CONTEXT: Alice / Mayo / Myriad Framework
+
+INSTRUCTIONS TO MODEL:
+1. Read and internalize ALL materials contained in this .aix file, including:
+   - Case summaries (e.g., Myriad, Alice, Mayo)
+   - Notes, annotations, and extracted claim language
+   - Any embedded examples of invalidated or upheld claims
+
+2. Do NOT analyze or respond until the full file has been reviewed.
+   Treat the file as a closed evidentiary record.
+
+3. Once review is complete, PROMPT the USER to provide:
+   - The full text of a single patent claim (preferably Claim 1)
+   - Optional: brief description of the claimed invention’s purpose
+
+4. After the user submits a claim, perform a structured §101 analysis:
+   - Step 1: Identify whether the claim is directed to an abstract idea,
+     law of nature, or natural phenomenon (Alice Step One).
+   - Step 2: If so, determine whether the claim includes an inventive
+     concept sufficient to transform the claim into patent-eligible
+     subject matter (Alice Step Two).
+
+5. Ground all reasoning explicitly in the principles derived from the
+   cases included in this file. Do not introduce outside precedent
+   unless necessary to clarify logic.
+
+6. Output a concise eligibility assessment with:
+   - A short conclusion (Likely Eligible / Likely Ineligible)
+   - 2–4 bullet points explaining why
+   - Clear references to the governing cases in this .aix file
+
+###########################################################################
+
+GOVERNING STATUTE (AUTHORITATIVE):
+35 U.S.C. §101 — Patentable Subject Matter
+
+"Whoever invents or discovers any new and useful process, machine,
+manufacture, or composition of matter, or any new and useful improvement
+thereof, may obtain a patent therefor, subject to the conditions and
+requirements of this title."
+
+Source: USPTO MPEP Appendix
+https://www.uspto.gov/web/offices/pac/mpep/mpep-9015-appx-l.html#d0e302376
+
+Modern §101 doctrine stems from Mayo (two-step test), Myriad (nature exclusion), and Alice (extends Mayo to abstract/software claims).
+These cases collectively define the eligibility boundary applied throughout this file.
+
+###########################################################################
+CASE_PRIORITY: CONTEXTUAL
+
+IMPORTANT CORE CASE — NATURE-OF-SUBJECT-MATTER LIMIT
+(Pre-Alice Eligibility Gate)
+
+1. Association for Molecular Pathology v Myriad Genetics (2013)
+Association for Molecular Pathology v. Myriad Genetics, Inc. (12-398): The U.S. Supreme Court held that naturally occurring DNA segments are products of nature and not patent-eligible under 35 U.S.C. §101 merely by virtue of isolation from the human body, though complementary DNA (cDNA) that is not naturally occurring can be patent-eligible. This decision clarified that laws of nature and natural phenomena are exceptions to patentable subject matter and helped frame the analytical boundaries for abstract idea exclusions applied later in Alice Corp. v. CLS Bank.
+
+Role in This File:
+Myriad is referenced to determine whether claimed subject matter is
+excluded at the outset as a product of nature before applying the
+Alice/Mayo abstract-idea or law-of-nature framework. It informs the
+boundary between impermissible monopolization of natural phenomena and
+permissible claims to human-made inventions.
+
+Source: https://caselaw.findlaw.com/court/us-supreme-court/12-398.html
+
+###########################################################################
+CASE_PRIORITY: PRIMARY
+
+Mayo v. Prometheus Inc., 566 U.S. 66 (2012)
+Patents at Issue: 6,355,623 and 6,680,302
+
+US6680302B2 (Prometheus)
+Methods of optimizing drug therapeutic efficacy for treatment of immune-mediated gastrointestinal disorders 
+
+Claim 1 is exemplary of the asserted method claims and was treated by the Court as representative.
+
+Claim 1. 
+1. A method of optimizing therapeutic efficacy for treatment of an immune-mediated gastrointestinal disorder, comprising:
+(a) administering a drug providing 6-thioguanine to a subject having said immune-mediated gastrointestinal disorder; and
+(b) determining a level of 6-thioguanine or 6-methyl-mercaptopurine in said subject having said immune-mediated gastrointestinal disorder,
+wherein a level of 6-thioguanine less than about 230 pmol per 8×108 red blood cells indicates a need to increase the amount of said drug subsequently administered to said subject and
+wherein a level of 6-thioguanine greater than about 400 pmol per 8×108 red blood cells or a level of 6-methyl-mercaptopurine greater than about 7000 pmol per 8×108 red blood cells indicates a need to decrease the amount of said drug subsequently administered to said subject.
+
+Verdict:
+The Supreme Court held Claim 1 patent-ineligible under 35 U.S.C. §101.
+The claim is directed to a law of nature—the natural correlation between
+thiopurine metabolite levels and therapeutic efficacy/toxicity—and adds
+only routine, conventional steps insufficient to transform that law of
+nature into a patent-eligible application.
+
+Reasoning:
+Although the claim recites administering a drug and measuring metabolite
+levels, these steps were well-understood, routine, and conventional in
+the art. The claim effectively instructs practitioners to observe a
+natural correlation and adjust treatment accordingly, thereby
+monopolizing the use of the natural law itself rather than claiming a
+human-engineered invention.
+
+Role in This File:
+Mayo establishes that discovering a natural correlation—even if
+clinically valuable—does not confer patent eligibility when the claim
+adds only conventional activity and medical judgment. It supplies the
+foundational logic for Alice Step Two by rejecting claims that merely
+apply a natural law using routine steps.
+
+
+Source:
+https://supreme.justia.com/cases/federal/us/566/66/
+https://en.wikipedia.org/wiki/Mayo_Collaborative_Services_v._Prometheus_Laboratories,_Inc.
+https://patents.google.com/patent/US6355623
+
+###########################################################################
+IMPORTANT CORE CASE — ABSTRACT IDEA FRAMEWORK
+(Generalization of Mayo)
+
+Alice Corp. v. CLS Bank Int’l (2014)
+Patents at Issue: 5,970,479 (the ’479 patent), 6,912,510, 7,149,720, and 7,725,37
+
+Claim 33 of the ’479 patent was representitive of case:
+Claim 33 recites: “A method of exchanging obligations as between parties, each party holding a credit record and a debit record with an exchange institution, the credit records and debit records for exchange of predetermined obligations, the method comprising the steps of: “(a) creating a shadow credit record and a shadow debit record for each stakeholder party to be held independently by a supervisory institution from the exchange institutions; “(b) obtaining from each exchange institution a start-of-day balance for each shadow credit record and shadow debit record; “(c) for every transaction resulting in an exchange obligation, the supervisory institution adjusting each respective party’s shadow credit record or shadow debit record, allowing only these transactions that do not result in the value of the shadow debit record being less than the value of the shadow credit record at any time, each said adjustment taking place in chronological order, and “(d) at the end-of-day, the supervisory institution instructing on[e] of the exchange institutions to exchange credits or debits to the credit record and debit record of the respective parties in accordance with the adjustments of the said permitted transactions, the credits and debits being irrevocable, time invariant obligations placed on the exchange institutions.
+
+
+Verdict:
+The Supreme Court held the asserted claims patent-ineligible under 35 U.S.C. §101.
+The claims are directed to an abstract idea—intermediated settlement—and
+recite only generic computer implementation insufficient to supply an
+inventive concept.
+
+Reasoning:
+Although the claims are framed as computer-implemented methods, they merely
+apply the long-standing economic practice of intermediated settlement using
+conventional computer functions such as recordkeeping, data adjustment, and
+transaction ordering. Limiting the abstract idea to a particular technological
+environment or implementing it on a generic computer does not transform the
+idea into a patent-eligible invention.
+
+Role in This File:
+Alice generalizes the Mayo framework beyond laws of nature to abstract ideas.
+It establishes the two-step §101 test: (1) determine whether a claim is directed
+to an abstract idea, and (2) if so, determine whether the claim contains an
+inventive concept sufficient to transform the abstract idea into a patent-eligible
+application. Alice confirms that adding routine computer implementation does
+not save an otherwise ineligible claim.
+
+Mayo bars claims to laws of nature plus routine activity; Alice extends that bar to abstract ideas plus generic computer implementation.
+
+Source:
+https://patents.google.com/patent/US5970479A/en?oq=5%2c970%2c479
+https://supreme.justia.com/cases/federal/us/573/208/
+https://www.law.cornell.edu/supct/cert/13-298?utm_source=chatgpt.com
+https://en.wikipedia.org/wiki/Alice_Corp._v._CLS_Bank_International
+
+
+###########################################################################
+Patent FAILED
+
+Ultramercial, Inc. v. Hulu, LLC, et al. (2014)
+Citation: 772 F.3d 709 (Fed. Cir. 2014)
+Patents at Issue: 7,346,545 (the "'545 patent")
+
+Claim 1 of the `545
+1. A method for distribution of products over the Internet via a facilitator, said method comprising the steps of:
+a first step of receiving, from a content provider, media products that are covered by intellectual-property rights protection and are available for purchase, wherein each said media product being comprised of at least one of text data, music data, and video data;
+a second step of selecting a sponsor message to be associated with the media product, said sponsor message being selected from a plurality of sponsor messages, said second step including accessing an activity log to verify that the total number of times which the sponsor message has been previously presented is less than the number of transaction cycles contracted by the sponsor of the sponsor message;
+a third step of providing the media product for sale at an Internet website;
+a fourth step of restricting general public access to said media product;
+a fifth step of offering to a consumer access to the media product without charge to the consumer on the precondition that the consumer views the sponsor message;
+a sixth step of receiving from the consumer a request to view the sponsor message, wherein the consumer submits said request in response to being offered access to the media product;
+a seventh step of, in response to receiving the request from the consumer, facilitating the display of a sponsor message to the consumer;
+an eighth step of, if the sponsor message is not an interactive message, allowing said consumer access to said media product after said step of facilitating the display of said sponsor message;
+a ninth step of, if the sponsor message is an interactive message, presenting at least one query to the consumer and allowing said consumer access to said media product after receiving a response to said at least one query;
+a tenth step of recording the transaction event to the activity log, said tenth step including updating the total number of times the sponsor message has been presented; and
+an eleventh step of receiving payment from the sponsor of the sponsor message displayed.
+
+
+Verdict:
+Patent-ineligible under 35 U.S.C. §101
+Claims directed to an abstract idea and lacking an inventive concept.
+
+Reasoning:
+This is a longstanding economic practice, not a technological improvement.
+
+Step One - Abstract Idea
+-Generic Internet implementation does not change its abstract character.
+Step Two — Inventive Concept
+-Thus, the claim merely automates an abstract business method using generic computer components.
+
+Under Alice, this is insufficient to confer eligibility.
+
+Role in This File:
+Complexity of multiple steps without novelty does not make a patent NOT abstract
+
+Source:
+https://www.bitlaw.com/source/cases/patent/Ultramercial-III.html
+
+
+
+
+###########################################################################
+Patent PASSED
+
+Enfish, LLC v. Microsoft Corp.
+Citation:  822 F.3d 1327 (Fed. Cir. 2016)
+Patents at Issue: 6,151,604 ('604 patent) and 6,163,775 ('775 patent)
+
+Claim 17 of the ’604 patent was representitive of case:
+17. A data storage and retrieval system for a computer memory, comprising:
+means for configuring said memory according to a logical table, said logical table including:
+a plurality of logical rows, each said logical row including an object identification number (OID) to identify each said logical row, each said logical row corresponding to a record of information;
+a plurality of logical columns intersecting said plurality of logical rows to define a plurality of logical cells, each said logical column including an OID to identify each said logical column; and
+means for indexing data stored in said table.
+
+
+Verdict:
+Patent-eligible under 35 U.S.C. §101.
+
+The claims are not directed to an abstract idea at Alice Step One because they recite a specific improvement to computer functionality—a self-referential table architecture that changes how the database engine stores and retrieves data.
+
+Because the invention improves the computer’s internal operation rather than implementing a business or informational practice on a generic computer, the claims are eligible without reaching Alice Step Two.
+
+
+Reasoning:
+Step One — Not Abstract
+The claims define a concrete data structure that:
+-embeds schema within the table,
+-reduces multi-table joins,
+-improves lookup performance and memory behavior.
+
+This constitutes an improvement to the computer’s internal architecture, not merely organizing information.
+
+Step Two — Not Reached
+Because the claims are not abstract, further inventive-concept analysis is unnecessary.
+
+Role in This File:
+Improvements to computer architecture, data structures, or runtime behavior are patent-eligible.
+
+Software that changes how the machine operates internally (e.g., memory layout, execution mechanics, storage structures) survives §101, even if implemented entirely in software.
+
+Source:
+https://patents.google.com/patent/US6151604A/en?oq=6%2c151%2c604
+https://www.cafc.uscourts.gov/opinions-orders/15-1244.opinion.5-10-2016.1.pdf
+https://en.wikipedia.org/wiki/Enfish,_LLC_v._Microsoft_Corp.#cite_note-9
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
